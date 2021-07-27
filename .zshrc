@@ -18,24 +18,29 @@ bindkey "^?" backward-delete-char
 
 export KEYTIMEOUT=1
 
-
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/maxim/.zshrc'
 
-autoload -Uz compinit
-compinit
+#autoload -Uz compinit
+#compinit
 # End of lines added by compinstall
 
+
+#contrib/completion/git-completion.zsh
 
 alias sba='source bin/activate'
 alias sbd='deactivate'
 alias mpy='./manage.py'
 alias vim='nvim'
 alias top='htop'
-alias ls='ls -a'
+alias ls='ls -a --color='auto''
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+alias cp='cp -iv'
+alias unitd='sudo unitd --control 127.0.0.1:8000'
+alias vimconf='vim .config/nvim/init.vim'
 
+source /usr/share/LS_COLORS/dircolors.sh
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
