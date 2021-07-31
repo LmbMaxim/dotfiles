@@ -13,20 +13,21 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'nvim-telescope/telescope.nvim'
 call plug#end()
 
+"general settings
+set completeopt-=preview
 set equalalways
 set background=light
 colorscheme PaperColor
 set path+=**
 set number
 set signcolumn=number
-:let mapleader = ","
-
+let mapleader = ","
 let g:python3_host_prog='/usr/bin/python3'
 let g:airline_theme='papercolor'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 0
 
-"netrw section---
+"netrw config 
 let g:netrw_altv = 1 
 let g:netrw_winsize = 30
 let g:netrw_banner = 0
@@ -41,9 +42,7 @@ inoremap <Leader><Tab> <c-x><c-o>
 nnoremap <Leader>v <c-w>v 
 nnoremap <Leader>t :tabe<CR>
 
-set completeopt-=preview
-
-
+"treesitter config
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
   highlight = {

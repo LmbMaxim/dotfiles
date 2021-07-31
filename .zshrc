@@ -20,6 +20,7 @@ export KEYTIMEOUT=1
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/maxim/.zshrc'
+ZLE_RPROMPT_INDENT=0
 
 #autoload -Uz compinit
 #compinit
