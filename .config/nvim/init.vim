@@ -11,6 +11,9 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'nvim-lua/popup.nvim'
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
+  Plug 'tweekmonster/django-plus.vim'
+  Plug 'honza/vim-snippets'
+
 call plug#end()
 
 "general settings
@@ -26,6 +29,18 @@ let g:python3_host_prog='/usr/bin/python3'
 let g:airline_theme='papercolor'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 0
+let g:airline#extensions#tabline#formatter = 'jsformatter'
+
+nnoremap <Leader>q :wqa<CR>
+inoremap <Tab> <c-x><c-o>
+nnoremap <Leader>v <c-w>v 
+nnoremap <Leader>c <c-w>c
+nnoremap <Leader>s <c-w>s
+nnoremap <Leader>t :tabe<CR>
+nnoremap <c-l> <c-w>l 
+nnoremap <c-j> <c-w>j
+nnoremap <c-h> <c-w>h
+nnoremap <c-k> <c-w>k
 
 "netrw config 
 let g:netrw_altv = 1 
@@ -37,10 +52,6 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in
     \ execute 'Lex' argv()[0] | wincmd p | enew | execute 'cd '.argv()[0] | endif
 nnoremap <Leader>dd :Lexplore %:p:h<CR>
 nnoremap <Leader>da :Lexplore<CR>
-nnoremap <Leader>q :wqa<CR>
-inoremap <Leader><Tab> <c-x><c-o>
-nnoremap <Leader>v <c-w>v 
-nnoremap <Leader>t :tabe<CR>
 
 "treesitter config
 lua <<EOF
@@ -53,7 +64,4 @@ EOF
 
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
