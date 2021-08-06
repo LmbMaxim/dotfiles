@@ -2,34 +2,49 @@ call plug#begin(stdpath('data') . '/plugged')
   Plug 'tpope/vim-surround'
   Plug 'ryanoasis/vim-devicons'
   Plug 'kyazdani42/nvim-web-devicons'
-  Plug 'vim-airline/vim-airline'
-  Plug 'vim-airline/vim-airline-themes'
   Plug 'sansyrox/vim-python-virtualenv'
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-  Plug 'NLKNguyen/papercolor-theme'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'nvim-lua/popup.nvim'
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
   Plug 'tweekmonster/django-plus.vim'
   Plug 'honza/vim-snippets'
-
+  Plug 'gko/vim-coloresque'
 call plug#end()
+
 
 "general settings
 set completeopt-=preview
 set equalalways
-set background=light
-colorscheme PaperColor
 set path+=**
 set number
 set signcolumn=number
+let g:Hexokinase_highlighters = [ 'signcolumn' ]
 let mapleader = ","
 let g:python3_host_prog='/usr/bin/python3'
-let g:airline_theme='papercolor'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 0
-let g:airline#extensions#tabline#formatter = 'jsformatter'
+set guicursor=
+
+set fillchars+=vert:¦
+set fillchars+=stl:_
+set fillchars+=stlnc:_
+
+highlight ColorColumn ctermbg=none
+highlight VertSplit cterm=NONE
+highlight Normal ctermbg=none
+highlight NonText ctermbg=none
+highlight CursorLine ctermbg=none
+highlight LineNr ctermbg=none
+highlight Pmenu ctermbg=none
+highlight PmenuSel ctermbg=0
+highlight StatusLine cterm=none
+highlight StatusLineNC cterm=none
+highlight Visual ctermbg=0
+set laststatus=2
+"set wildoptions=pum
+"set pumblend=10
+"set winblend=10
+
 
 nnoremap <Leader>q :wqa<CR>
 inoremap <Tab> <c-x><c-o>
@@ -42,6 +57,7 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-h> <c-w>h
 nnoremap <c-k> <c-w>k
 
+
 "netrw config 
 let g:netrw_altv = 1 
 let g:netrw_winsize = 30
@@ -53,15 +69,18 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in
 nnoremap <Leader>dd :Lexplore %:p:h<CR>
 nnoremap <Leader>da :Lexplore<CR>
 
+
 "treesitter config
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
   highlight = {
-    enable = true,
+    enable = true
     }
 }
 EOF
 
+
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
+
 
