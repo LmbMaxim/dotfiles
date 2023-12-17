@@ -24,9 +24,9 @@ window#waybar {
     color: #ffffff;
 }
 
-#tags button.urgent{
-    background-color: #bccccc;
-}
+/* #tags button.urgent{ */
+/*     background-color: #bccccc; */
+/* } */
 
 #workspaces button{
     margin: 0 -5;    
