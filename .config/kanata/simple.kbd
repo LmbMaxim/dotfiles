@@ -1,0 +1,106 @@
+(defalias
+  ;; shifted keys
+  ! S-1
+  @ S-2
+  # S-3
+  $ S-4
+  % S-5
+  ^ S-6
+  & S-7
+  * S-8
+  { S-[
+  } S-]
+  : S-;
+)
+
+(defalias
+  mwu (mwheel-up 50 120)
+  mwd (mwheel-down 50 120)
+  mwl (mwheel-left 50 120)
+  mwr (mwheel-right 50 120)
+)
+
+(defalias
+
+)
+
+(defalias
+
+  game (layer-switch game)
+  qrw (layer-switch qwerty)
+
+  spc (tap-hold 200 200 spc (layer-toggle moves))
+
+  fn1 (tap-hold 200 200 ralt (layer-toggle func1))
+
+  fn2 (tap-hold 200 200 ralt (layer-toggle func2))
+
+  cap (tap-hold 200 200 esc lctl)
+
+  alt' (tap-hold 200 200 ' ralt)
+  alta (tap-hold 200 200 a lalt)
+
+
+  alt' (tap-hold 200 200 ' ralt)
+  alta (tap-hold 200 200 a lalt)
+
+
+)
+
+
+(defsrc
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rmet rctl
+)
+
+
+;; The first layer defined is the layer that will be active by default when
+;; kanata starts up. This layer is the standard QWERTY layout except for the
+;; backtick/grave key (@grl) which is an alias for a tap-hold key.
+;;
+;; There are currently a maximum of 25 layers allowed.
+
+(deflayer qwerty
+  grv  1        2    3    4    5    6    7    8    9    0    -      =    bspc
+  tab  q        w    e    r    t    y    u    i    o    p    [      ]    \
+  @cap @alta    s    d    f    g    h    j    k    l    ;    @alt'      ret
+  lsft z        x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet     @fn1           @spc          @fn2 rmet rctl
+)
+
+(deflayer game
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  @cap a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           @spc           ralt rmet rctl
+)
+
+(deflayer func1
+  grv  1      2      3      4    5    6    7    8    9    0    -    =    bspc
+  tab  M-1    M-2    M-3    M-4  t    y    u    i    o    p    [    ]    \
+  @cap a      s      d      f    g    h    j    k    l    ;    '    ret
+  lsft z      x      c      v    b    n    m    ,    .    /    rsft
+  lctl lmet   lalt               bspc           ralt rmet rctl
+)
+
+(deflayer func2
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  @cap a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           @spc           ralt rmet rctl
+)
+
+(deflayer moves
+  _    @qrw @game lrld   _    _    _     _    _    _       _    _    _    _
+  _    _    _     _      _    _    _     _    _    _       _    _    _    _
+  _    _    _     @mwu   @mwd _    left  down up   rght    _    _    _
+  _    _    _     _      _    _    _     _    _    _       _    _
+  _    _    _        _                  _    _       _
+)
+
+
