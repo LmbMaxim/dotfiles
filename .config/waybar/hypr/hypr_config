@@ -1,0 +1,25 @@
+{
+    "layer":    "top",
+    "position": "top",
+    "height":    10,
+
+    "modules-left":    ["clock"],
+    "modules-center":  ["hyprland/workspaces"],
+    "modules-right":   ["tray"],
+
+
+    "tray": {
+        "icon-size": 10,
+        "spacing": 6 
+    },
+
+    "clock": {
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+
+    "hyprland/workspaces": {
+        "format": "{name}",
+     },
+}
+

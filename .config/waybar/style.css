@@ -1,0 +1,48 @@
+* {
+    font-size: 10px;
+    min-height: 0px;
+}
+
+window#waybar {
+    background-color: rgba(11, 11, 11, 0);
+    color: #ffffff;
+}
+
+#tags {
+    color: rgba(9, 9, 9, 0);
+}
+#tags button{
+    min-width: 0px;
+    color: rgba(9, 9, 9, 0);
+}
+
+#tags button.occupied{
+    color: #999;
+}
+
+#tags button.focused{
+    color: #ffffff;
+}
+
+#tags button.urgent{
+    background-color: #bccccc;
+}
+
+#workspaces button{
+    margin: 0 -5;    
+}
+#workspaces button.occupied{
+    color: rgba(9, 9, 9, 0);
+}
+#workspaces button.active{
+    color: rgba(9, 9, 9, 9);
+}
+
+#tray,
+#clock{
+    margin: 0 5px;
+    min-width: 10px;
+    padding: 0 0px;
+    color: #000;
+}
+

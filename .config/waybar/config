@@ -1,0 +1,24 @@
+{
+    "layer":    "top",
+    "position": "left",
+    "height":    10,
+
+    "modules-left":    [],
+    "modules-center":  ["river/tags"],
+    "modules-right":   ["tray"],
+
+    "river/tags": {
+        "num-tags": 4
+    },
+
+    "tray": {
+        "icon-size": 10,
+        "spacing": 6 
+    },
+
+    "clock": {
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+}
+
