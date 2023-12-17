@@ -1,0 +1,13 @@
+{
+  "pyprland": {
+    "plugins": [
+      "scratchpads"
+    ]
+  },
+  "scratchpads": {
+    "music": {
+      "command": "ymuse",
+      "animation": "fromTop"
+    }
+  }
+}
