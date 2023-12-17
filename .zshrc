@@ -119,7 +119,7 @@ alias nv="nvim"
 alias msshs="sshuttle -r maximssh@193.176.190.123 0/0 --dns"
 alias mssh="ssh  maximssh@193.176.190.123"
 alias ls="eza --icons"
-alias config='/usr/bin/git --git-dir=/home/maxim/.dotfiles/ --work-tree=/home/maxim/'
+alias config='/usr/bin/git --git-dir=/home/maxim/.dotfiles/ --work-tree="$HOME"'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
