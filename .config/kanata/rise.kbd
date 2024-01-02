@@ -31,13 +31,20 @@
 
   fn2 (tap-hold 200 200 ralt (layer-toggle func2))
 
-  cap (tap-hold 200 200 esc lctl)
+;;  cap (tap-hold 200 200 esc lctl)
+  sft (tap-hold 200 200 tab lsft)
 
   alta (tap-hold 200 200 a lalt)
   win; (tap-hold 200 200 ; rmet)
   sft' (tap-hold 200 200 ' rsft)
-
+;;  ctl  (tap-hold 200 200 M-tab lctl)
+    
+    cpy M-c 
+    pst M-v 
+    
+    cp (tap-dance 200 (lctl C-c ))
 )
+
 
 (defsrc
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
@@ -54,44 +61,44 @@
 ;;
 ;; There are currently a maximum of 25 layers allowed.
 
+;;lsft tap free is free
 (deflayer qwerty
-  grv  1        2    3    4    5    6    7    8    9    0      -      =    bspc
-  tab  q        w    e    r    t    y    u    i    o    p      [      ]    \
-  @cap @alta    s    d    f    g    h    j    k    l    @win;  @sft'      ret
-  lsft z        x    c    v    b    n    m    ,    .    /      rsft
-  lctl lmet     @fn1           @spc          @fn2 rmet rctl
+  grv   1        2    3    4    5    6    7    8    9    0      -      =    bspc
+  esc   q        w    e    r    t    y    u    i    o    p      [      ]    \
+  @sft  @alta    s    d    f    g    h    j    k    l    @win;  @sft'      ret
+  @cp   z        x    c    v    b    n    m    ,    .    /      rsft
+  XX    lmet     @fn1           @spc          @fn2 rmet rctl
 )
 
 (deflayer game
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
-  @cap a    s    d    f    g    h    j    k    l    ;    '    ret
+  @sft a    s    d    f    g    h    j    k    l    ;    '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
   lctl lmet lalt           @spc           ralt rmet rctl
 )
 
 (deflayer func1
   grv   1      2      3      4    5        6    7    8    9    0    -    =    bspc
-  M-tab M-1    M-2    M-3    M-4  M-tab    y    u    i    o    p    [    ]    \
-  @cap  @!     @@     @#     @$   @%       @^   @&   @*   XX   XX   '    ret
+  M-tab M-1    M-2    M-3    M-4  t    y    u    i    o    p    [    ]    \
+  @sft    @!     @@     @#     @$   @%       @^   @&   @*   XX   XX   '    ret
   lsft  z      x      c      v    b        n    m    ,    .    /    rsft
   lctl  lmet   lalt               bspc           ralt rmet rctl
 )
 
 (deflayer func2
-  grv   _    _    _    _    _    _    _    _    _    _     -    =    bspc
-  A-tab _    _    _    _    _    _    _    _    _    _     [    ]    \
-  @cap  1    2    3    4    5    6    7    8    9    0     rsft ret
-  lsft  z    x    c    v    b    n    m    ,    .    /     rsft
-  lctl  lmet lalt           @spc           ralt rmet rctl
+  grv    _    _    _    _    _    _    _    _    _    _     -    =    bspc
+  A-tab  _    _    _    _    _    _    _    _    _    _     [    ]    \
+  @sft   1    2    3    4    5    6    7    8    9    0     rsft ret
+  A-tab  z    x    c    v    b    n    m    ,    .    /     rsft
+  lctl   lmet lalt            del           ralt rmet rctl
 )
 
 (deflayer moves
-  _    @qrw @game lrld   _    _      _     _    _    _       _    _    _    _
-  _    M-1  M-2   M-3    M-4  M-tab  _     _    _    _       _    _    _    _
+ _    @qrw @game lrld    _    _      _     _    _    _          _    _    _    _
+  _    _    _     _      _    _      _     _    @pr1 @pr2       _    _    _    _
   _    _    _     @mwu   @mwd _      left  down up   rght    _    _    _
-  _    _    _     _      _    _      _     _    _    _       _    _
+  _    _    _     @cpy   @pst _      _     _    _    _       _    _
   _    _    _              _                    _    _       _
 )
-
 

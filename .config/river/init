@@ -7,15 +7,17 @@
 wlr-randr --output HDMI-A-1 --custom-mode 1920x1080@100Hz
 riverctl spawn "systemctl --user import-environment"
 riverctl spawn "/usr/lib/polkit-kde-authentication-agent-1"
-riverctl spawn "/usr/lib/polkit-gnome"
+# riverctl spawn "/usr/lib/polkit-gnome"
 riverctl spawn "waybar -c ~/.config/waybar/river/config  -s ~/.config/waybar/river/style_dark.css"
+# mpvpaper -o "no-audio --loop" '*' Images/wallpappers/animated_gradient.webm
 riverctl spawn "foot --server"
 # riverctl spawn "swaybg -i ~/Images/wallpappers/light-1694632891264-6887.jpg"
-riverctl spawn "swaybg -i ~/Images/black.png"
+riverctl spawn "swaybg -i ~/Images/wallpappers/dark-forest.jpeg"
 riverctl spawn udiskie
 riverctl spawn "env MOZ_ENABLE_WAYLAND=1"
 # riverctl spawn corectrl
 
+riverct spawn "sudo kanata -c .config/kanata/rise2.kbd"
 
 riverctl keyboard-layout  -model "pc86" -options "grp:win_space_toggle" "us, ru" 
 riverctl set-repeat 50 300
@@ -23,14 +25,16 @@ riverctl input pointer-5426-138-Razer_Razer_Viper_Mini accel-profile flat
 riverctl input pointer-5426-138-Razer_Razer_Viper_Mini pointer-accel -0.4
 
 
+riverctl map normal Super+Shift R spawn $HOME/.config/river/init
 
-riverctl map normal "Mod4" R spawn $HOME/.config/river/init
+# riverctl map normal Super+Shift Return spawn footclient
+riverctl map normal Super W spawn footclient
+riverctl map normal Super E spawn nemo
 
-riverctl map normal Super+Shift Return spawn footclient
+# riverctl map normal Super Return spawn "rofi -show drun -terminal footclient"
+riverctl map normal Super R spawn "rofi -show drun -terminal footclient"
 
-riverctl map normal Super Return spawn "rofi -show drun -terminal footclient"
-
-riverctl map normal Super Q close
+riverctl map normal Super c close
 
 riverctl map normal Super+Shift E exit
 
@@ -158,6 +162,5 @@ riverctl default-layout rivertile
 rivertile -view-padding 2 -outer-padding 0 &
 
     # col.active_border = rgba(ffffffcc)
-    # col.inactive_border = rgba(595959aa)
 riverctl border-color-focused 0xffffffcc
-riverctl border-width 0
+riverctl border-width 1
