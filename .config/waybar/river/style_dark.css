@@ -1,6 +1,8 @@
 * {
     font-size: 10px;
     min-height: 0px;
+    margin-right:  -1px;
+    margin-left:  -1px;
 }
 
 window#waybar {
@@ -10,12 +12,11 @@ window#waybar {
 
 #tags {
     color: rgba(9, 9, 9, 0);
+    padding: 0px;
 }
 #tags button{
     min-width: 0px;
     color: rgba(9, 9, 9, 0);
-    margin-top: -3px;
-    margin-bottom: -5px;
 }
 
 #tags button.occupied{
@@ -30,8 +31,6 @@ window#waybar {
     background-color: #bccccc;
 }
 
-
-#tray,
 #clock{
     /* margin: 0 5px; */
     /* min-width: 10px; */
@@ -41,6 +40,12 @@ window#waybar {
     margin-top: -5px;
     margin-bottom: -5px;
     min-width: 10px;
+    padding: 0 0px;
+    color: #fff;
+}
+#tray{
+    margin-bottom: 5px;
+    /* min-width: 10px; */
     padding: 0 0px;
     color: #fff;
 }

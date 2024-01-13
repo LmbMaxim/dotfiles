@@ -1,7 +1,6 @@
 {
     "layer":    "top",
-    "position": "bottom",
-    "height":    10,
+    "position": "left",
 
     "modules-left":    ["river/tags"],
     "modules-center":  [],

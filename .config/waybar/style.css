@@ -38,7 +38,7 @@ window#waybar {
     color: rgba(9, 9, 9, 9);
 }
 
-#tray,
+/* #tray, */
 #clock{
     margin: 0 5px;
     min-width: 10px;
