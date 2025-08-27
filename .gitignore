@@ -16,6 +16,12 @@
 # Whitelist the entire .config directory
 !.config/
 
+# Whitelist the specific app configs I want INSIDE .config
+!.config/niri/
+!.config/wlr--which-key/
+!.config/foot/
+
+#
 # You can add other specific files you know you want below
 #!.vimrc
 #!.tmux.conf
