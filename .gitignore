@@ -1,0 +1,24 @@
+# Ignore EVERYTHING in $HOME by default
+*
+
+# Now, whitelist (track) the specific files and folders I care about.
+
+# First, whitelist this .gitignore file itself!
+!.gitignore
+
+# Core shell files
+!.bashrc
+!.zshrc
+!.profile
+!.bash_profile
+!.bash_logout
+
+# Whitelist the entire .config directory
+!.config/
+
+# You can add other specific files you know you want below
+#!.vimrc
+#!.tmux.conf
+#!.somethingelse
+
+# Important: Do NOT ignore the .config directory itself
