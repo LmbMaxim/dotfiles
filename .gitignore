@@ -18,7 +18,7 @@
 
 # Whitelist the specific app configs I want INSIDE .config
 !.config/niri/
-!.config/wlr--which-key/
+!.config/wlr-which-key/
 !.config/foot/
 
 #
