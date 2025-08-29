@@ -27,13 +27,20 @@ auto_kbd_layout: true
 
 menu:
 
-  - key: "i"
-    desc: app id 
-    cmd: niri msg focused-window
+  - key: "w"
+    desc: WireGuard
+    submenu:
+      - key: "u"
+        desc: up
+        cmd: sudo wg-quick up desktop
+
+      - key: "d"
+        desc: down
+        cmd: sudo wg-quick down desktop
 
   - key: "q"
     desc: kill niri 
-    cmd: killall niri
+    cmd:  killall niri
 
   - key: "p"
     desc: Power

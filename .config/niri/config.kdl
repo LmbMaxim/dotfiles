@@ -65,14 +65,12 @@ input {
 
 environment {
         DISPLAY ":0"
+	EDITOR "nvim"
         ELECTRON_OZONE_PLATFORM_HINT "auto"
         QT_QPA_PLATFORM "wayland"
         QT_WAYLAND_DISABLE_WINDOWDECORATION "1"
         XDG_SESSION_TYPE "wayland"
         XDG_CURRENT_DESKTOP "niri"
-        XDG_CONFIG_HOME="$HOME/.config"
-        XDG_DATA_HOME="$HOME/.local/share"
-        XDG_CACHE_HOME="$HOME/.cache"
     }
 
 // You can configure outputs by their name, which you can find
@@ -410,7 +408,7 @@ window-rule {
 
 // Example: block out two password managers from screen capture.
 // (This example rule is commented out with a "/-" in front.)
-/-window-rule {
+window-rule {
     match app-id=r#"^org\.keepassxc\.KeePassXC$"#
     match app-id=r#"^org\.gnome\.World\.Secrets$"#
 
@@ -422,7 +420,7 @@ window-rule {
 
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
-/-window-rule {
+window-rule {
     geometry-corner-radius 12
     clip-to-geometry true
 }
