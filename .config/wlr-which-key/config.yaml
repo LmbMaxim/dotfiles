@@ -1,14 +1,14 @@
 # Theming
-font: MesloLGS NF 12
-background: "#282828d0"
-color: "#fbf1c7"
-border: "#8ec07c"
+font: MesloLGS NF 10
+background: "#000000ff"
+color: "#ffffff"
+border: "#ffffff"
 separator: " ➜ "
-border_width: 2
-corner_r: 10
-padding: 15 # Defaults to corner_r
-rows_per_column: 5 # No limit by default
-column_padding: 25 # Defaults to padding
+border_width: 1
+corner_r: 5
+padding: 10
+rows_per_column: 5
+column_padding: 25
 
 # Anchor and margin
 anchor: center # One of center, left, right, top, bottom, bottom-left, top-left, etc.
@@ -26,17 +26,41 @@ inhibit_compositor_keyboard_shortcuts: true
 auto_kbd_layout: true
 
 menu:
+#  - key: "w"
+#    desc: WireGuard
+#    cmd: bash -c "if ip link show desktop > /dev/null 2>&1; then sudo wg-quick down desktop; else sudo wg-quick up desktop; fi"
 
-  - key: "w"
+  - key: "w" 
     desc: WireGuard
-    submenu:
-      - key: "u"
-        desc: up
-        cmd: sudo wg-quick up desktop
+    cmd: bash -c "if ip link show desktop > /dev/null 2>&1; then sudo wg-quick down desktop && notify-send 'WireGuard' 'Connection deactivated'; else sudo wg-quick up desktop && notify-send 'WireGuard' 'Connection activated'; fi"
 
-      - key: "d"
-        desc: down
-        cmd: sudo wg-quick down desktop
+  - key: "a"
+    desc: audio output 
+    submenu:
+      - key: "1"
+        desc: monitor-headphones
+        cmd: pactl set-default-sink alsa_output.pci-0000_03_00.1.pro-output-3 
+
+      - key: "2"
+        desc: monitor
+        cmd: pactl set-default-sink alsa_output.pci-0000_03_00.1.pro-output-7 
+
+      - key: "3"
+        desc: m-audio
+        cmd: pactl set-default-sink alsa_output.usb-BurrBrown_from_Texas_Instruments_USB_AUDIO_CODEC-00.pro-output-0
+
+  - key: "c"
+    desc: Config
+    submenu:
+      - key: "c"
+        desc: .config/
+        cmd: foot -e sh -c "cd ~/.config && ls; exec \$SHELL"
+      - key: "n"
+        desc: niri.kdl
+        cmd: foot -e nvim ~/.config/niri/config.kdl
+      - key: "g"
+        desc: GPU Frequency
+        cmd: /usr/local/bin/set-gpu-freq.sh
 
   - key: "q"
     desc: kill niri 
@@ -54,13 +78,3 @@ menu:
       - key: "o"
         desc: Off
         cmd: poweroff
-  - key: "c"
-    desc: Config
-    submenu:
-      - key: "c"
-        desc: .config/
-        cmd: foot -e sh -c "cd ~/.config && ls; exec \$SHELL"
-      - key: "n"
-        desc: niri.kdl
-        cmd: foot -e nvim ~/.config/niri/config.kdl
-        #cmd: foot-client -e neovim ~/.config/niri/config.kdl
